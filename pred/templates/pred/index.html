@@ -1,38 +1,19 @@
-{% extends 'pred/base.html' %}
-{% block content %}
-<div style="padding:1em;">
-    <div class="page-header">
-        <h1>keras를 이용한 딥러닝 <small>짧은털 고양이를 분류해 보자.</small></h1>
-    </div>
-    <form method="POST" action="{% url 'index' %}" enctype="multipart/form-data" class="form-horizontal">
-        {% csrf_token %}
-        <div class='form-group'>
-            <div class='col-sm-4'>{{form.as_p}}</div>
-            <div class='col-sm-8'><button type="submit" class="btn btn-primary">분석</button></div>
-        </div>
-    </form>
-    <p class="message">판정 이미지</p>
-    <ul>
-        {% if result_name != "" %}
-            <li>{{ result_name }}</li>
-        {% else %}
-            <li>이미지 없음</li>
-        {% endif %}
-    </ul>
-    <p class="message">판정 결과</p>
-    <ol>
-        {% if result_list %}
-            {% for result in result_list %}
-                <li>{{ result }}</li>
-            {% endfor %}
-        {% else %}
-            <li>결과 없음</li>
-        {% endif %}
-    </ol>
-    <div class="image">
-        {% if result_img != "" %}
-            <img src="data:image/png;base64,{{result_img}}"/>
-        {% endif %}
-    </div>
-</div>
-{% endblock %}
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">영화 제목</label>
+  </div>
+  <div>
+    <input type="email" class="form-control" id="movieTitle" placeholder="영화 제목을 입력해주세요.">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">점수</label>
+  </div>
+  <div>
+    <input type="number" class="form-control" id="movieTitle" placeholder="점수를 입력하세요.">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">리뷰</label>
+  </div>
+  <div class="mb-3">
+    <textarea class="form-control" id="review" rows="3" placeholder="리뷰를 입력해주세요."></textarea>
+  </div>
+  <button type="button" class="btn btn-primary">전송</button>

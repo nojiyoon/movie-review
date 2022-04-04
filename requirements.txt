@@ -3,7 +3,8 @@ bs4
 tensorflow
 keras
 matplotlib
-Django
+django
+djangorestframework
 Pillow
 numpy
 pandas

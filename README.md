@@ -1,9 +1,19 @@
-# 영화 리뷰 감성분석 및 유사 영화 추천
+# keras를 이용한 딥러닝 "짧은털 고양이를 분류해보자"
+고양이 이미지를 인식하여 고양이가 *__아메리칸 숏헤어__* 인지 *__코리안 숏헤어__* 인지 *__러시안 블루__* 인지 *__샴 고양이__* 인지 판별합니다.
 
-1. 내 영화 리뷰 감성분석
-    - 예) "너무 재미없다 시간아깝다" - 86% 확률로 부정 리뷰입니다!
+![result_american](https://user-images.githubusercontent.com/79895363/158056914-41aca9e2-e0f2-4cb6-a926-eb958adc11c3.png)
 
-2. 나와 비슷한 리뷰 보기
-    - 예) 뜨거운 피 -- 시간이 너무 아깝다 -- 평점 1
+#### 얼굴 검출방법
+`haarcascade_frontalcatface_extended.xml`
 
-3. 비슷한 리뷰 워드클라우드 시각화
+#### 실행방법
+
+필요한 패키지 설치 (```$ pip install -r requirements.txt```)한 후
+
+* `$ python 05.img_face_judgement_lab.py [이미지 경로]`
+
+또는
+
+* `$ python manage.py runserver`
+
+웹 링크에서 이미지 업로드하여 결과 확인

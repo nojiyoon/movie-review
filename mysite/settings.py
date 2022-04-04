@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'pred',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-CASCADE_FILE_PATH = os.path.join(BASE_DIR, './data/haarcascade/haarcascade_frontalcatface_extended.xml')
-MODEL_FILE_PATH = os.path.join(BASE_DIR, './model/model.h5')
