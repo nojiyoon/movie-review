@@ -20,4 +20,5 @@
 
 ### 3. __비슷한 리뷰 워드클라우드 시각화__
 
-![그림3](https://user-images.githubusercontent.com/79895363/161503059-c6890655-b86d-4cac-a1f5-23374ada6392.png)
+
+![다운로드 (3)](https://user-images.githubusercontent.com/79895363/161515981-f0a98d29-f218-48d7-8d14-3824579b71c7.png)
