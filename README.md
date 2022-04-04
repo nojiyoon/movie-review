@@ -1,19 +1,23 @@
-# keras를 이용한 딥러닝 "짧은털 고양이를 분류해보자"
-고양이 이미지를 인식하여 고양이가 *__아메리칸 숏헤어__* 인지 *__코리안 숏헤어__* 인지 *__러시안 블루__* 인지 *__샴 고양이__* 인지 판별합니다.
+# 영화 리뷰 감성분석 및 유사 영화 추천
 
-![result_american](https://user-images.githubusercontent.com/79895363/158056914-41aca9e2-e0f2-4cb6-a926-eb958adc11c3.png)
+## 내 리뷰
+![그림1](https://user-images.githubusercontent.com/79895363/161502941-aed0b3b1-610d-4a3e-ac30-a4c9ef45a592.png)
 
-#### 얼굴 검출방법
-`haarcascade_frontalcatface_extended.xml`
+  
+   
+     
+### 1. __내 영화 리뷰 감성분석__
+: 86% 확률로 긍정 리뷰입니다!
+  
+  
+  
+  
+### 2. __나와 비슷한 리뷰 보기__
 
-#### 실행방법
+![그림2](https://user-images.githubusercontent.com/79895363/161502982-196dfbbf-defe-4fd8-b51d-a6914a0db3fd.png)
 
-필요한 패키지 설치 (```$ pip install -r requirements.txt```)한 후
 
-* `$ python 05.img_face_judgement_lab.py [이미지 경로]`
 
-또는
+### 3. __비슷한 리뷰 워드클라우드 시각화__
 
-* `$ python manage.py runserver`
-
-웹 링크에서 이미지 업로드하여 결과 확인
+![그림3](https://user-images.githubusercontent.com/79895363/161503059-c6890655-b86d-4cac-a1f5-23374ada6392.png)
