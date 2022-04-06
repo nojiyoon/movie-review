@@ -22,3 +22,12 @@
 
 
 ![다운로드 (3)](https://user-images.githubusercontent.com/79895363/161515981-f0a98d29-f218-48d7-8d14-3824579b71c7.png)
+
+
+
+
+## 웹페이지 구현
+
+$ pip install -r requirements
+
+$ python managy.py runserver
