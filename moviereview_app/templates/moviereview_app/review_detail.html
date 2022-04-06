@@ -1,0 +1,56 @@
+{% extends "moviereview_app_base/base_with_navbar.html" %}
+{% load static %}
+{% block title %}{{ review.title }} | Detailed Review {% endblock title %}
+{% block content %}
+<head>
+  <meta charset="utf-8">
+</head>
+
+<main class="site-body">
+  <article class="review-detail max-content-width">
+    <div class="review-info">
+      <div class="restaurant-name">
+        <span class="cp-chip green">{{ review.movie_name }}</span>
+      </div>
+      <h1 class="title">{{ review.title }}</h1>
+      <div class="author">
+        <a class="review-author" href="#">
+          <span>{{ review.author.username }}</span>
+        </a>
+      </div>
+      <date class="date">{{ review.dt_created|date:"Y년 n월 j일" }}</date>
+      <div class="review-rating">
+        <span class="cp-stars">
+          {% for i in ""|ljust:review.rating %}
+            ★
+          {% endfor %}
+        </span>
+      </div>
+    </div>
+
+    <div class="content">
+      <img class="thumb" src="{{ review.image1.url }}">
+      {% if review.image2 %}
+        <img class="thumb" src="{{ review.image2.url }}">
+      {% endif %}
+      {% if review.image3 %}
+        <img class="thumb" src="{{ review.image3.url }}">
+      {% endif %}
+      
+      <p class="content">{{ review.content|linebreaksbr }}</p>
+      <a class="location" target="_blank" href="{{ review.movie_link }}">
+        <img class="cp-icon" src="{% static 'moviereview_app/icons/ic-pin.svg' %}" alt="Pin Icon">
+        <span>영화 상세보기</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      <a class="back-link" href="{% url 'index' %}">&lt; 목록으로</a>
+      <div class="buttons">
+        <a class="cp-button warn" href="#">삭제</a>
+        <a class="cp-button secondary" href="#">수정</a>
+      </div>
+    </div>
+  </article>
+</main>
+{% endblock content %}

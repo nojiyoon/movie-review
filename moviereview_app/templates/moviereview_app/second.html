@@ -1,0 +1,32 @@
+{% extends "moviereview_app_base/base_with_navbar.html" %}
+
+{% load static %}
+
+{% block title %} Coplate{% endblock title %}
+
+{% block content %}
+<head>
+  <meta charset="utf-8">
+</head>
+
+<main class="site-body">
+  <article class="review-detail max-content-width">
+
+    <div class="review-info">
+      <h1 class="fg">{{ text }}</h1>
+    </div>
+
+    <div class="content">
+      <img class="thumb" src="{% static 'moviereview_app/images/test.png' %}" alt="alternative">
+      
+      <p class="content">{{ dataframe|safe }}</p>
+
+    </div>
+
+    <div class="footer">
+      <a class="back-link" href="{% url 'index' %}">&lt; 목록으로</a>
+
+    </div>
+  </article>
+</main>
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends "moviereview_app_base/base_with_navbar.html" %}
+{% block content %}
+<main class="site-body">
+    <form class="review-form max-content-width" method="post" autocomplete="off" enctype="multipart/form-data">
+        <meta charset="UTF-8">
+
+        <body>
+            <h1>감성분석할 리뷰를 작성해주세요!</h1>
+            {% csrf_token %}
+            <div class="movie-name">
+                <input type="text" name="movie_name" maxlength="20" placeholder="영화 이름" class="cp-input" id="id_movie_name">
+            </div>
+
+            <div class="content">
+                <textarea name="message" cols="40" rows="10" placeholder="리뷰를 작성해 주세요." class="cp-input" id="id_review"></textarea>
+            </div>
+
+            <div class="rating">
+                <div class="cp-stars">
+                    <label for="id_rating_0"><input type="radio" name="rating" value="1" id="id_rating_0"
+                            required>★</label>
+                    <label for="id_rating_1"><input type="radio" name="rating" value="2" id="id_rating_1"
+                            required>★★</label>
+                    <label for="id_rating_2"><input type="radio" name="rating" value="3" id="id_rating_2"
+                            required>★★★</label>
+                    <label for="id_rating_3"><input type="radio" name="rating" value="4" id="id_rating_3"
+                            required>★★★★</label>
+                    <label for="id_rating_4"><input type="radio" name="rating" value="5" id="id_rating_4"
+                            required>★★★★★</label>
+                </div>
+            </div>
+
+            <!-- <input type="text" class="write_msg inputfield mytext" placeholder="Type a message" name="message" id="send" autocomplete="off"  /> -->
+
+            <div class="buttons">
+                <button class="cp-button submit" type="submit" onclick="sending();">작성 완료</button>
+            </div>
+        </body>
+    </form>
+</main>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js">
+    function sending() {
+        var f = 0;
+        var message = document.getElementById("id_review").value;
+
+        console.log("test")
+        $.post("",
+            {
+                "message": message,
+                "csrfmiddlewaretoken": "{{csrf_token}}"
+            },
+            function (data, status) {
+                console.log(data)
+            });
+    };
+</script>
+
+{% endblock %}

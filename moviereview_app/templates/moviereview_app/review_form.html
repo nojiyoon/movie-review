@@ -1,0 +1,79 @@
+{% extends "moviereview_app_base/base_with_navbar.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}새 리뷰 작성 | New Review{% endblock title %}
+
+{% block content %}
+<main class="site-body">
+  <form class="review-form max-content-width" method="post" autocomplete="off" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    <div class="title">
+      <!-- <input type="text" name="title" maxlength="30" placeholder="제목" class="cp-input" required id="id_title"> -->
+      {{ form.title|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:제목" }}
+      {% for error in form.title.errors %}
+      <div class="error-message">{{ error }}</div>
+      {% endfor %}
+    </div>
+    <div class="movie-name">
+      <!-- <input type="text" name="movie_name" maxlength="20" placeholder="영화 이름" class="cp-input" required id="id_movie_name"> -->
+      {{ form.movie_name|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:영화 이름" }}
+      {% for error in form.title.errors %}
+      <div class="error-message">{{ error }}</div>
+      {% endfor %}
+    </div>
+    <div class="movie-link">
+      <!-- <input type="url" name="movie_link" maxlength="200" placeholder="네이버 또는 카카오 플레이스 주소" class="cp-input" required id="id_restaurant_link"> -->
+      {{ form.movie_link|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:영화 링크" }}
+      {% for error in form.title.errors %}
+      <div class="error-message">{{ error }}</div>
+      {% endfor %}
+    </div>
+    <div class="rating">
+      <div class="cp-stars">
+        <!-- <label for="id_rating_0"><input type="radio" name="rating" value="1" id="id_rating_0" required>★</label>
+        <label for="id_rating_1"><input type="radio" name="rating" value="2" id="id_rating_1" required>★★</label>
+        <label for="id_rating_2"><input type="radio" name="rating" value="3" id="id_rating_2" required>★★★</label> -->
+        {% for radio in form.rating %}
+        {{radio}}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="content">
+      <!-- <textarea name="review" cols="40" rows="10" placeholder="리뷰를 작성해 주세요." class="cp-input" id="id_review"></textarea> -->
+      {{ form.content|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:리뷰를 작성해 주세요." }}
+      {% for error in form.title.errors %}
+      <div class="error-message">{{ error }}</div>
+      {% endfor %}
+    </div>
+    <div class="file">
+      <div class="file-content">
+        <div>
+          <!-- <input type="file" name="image1" accept="image/*" id="id_image1"> -->
+          {{ form.image1 }}
+        </div>
+      </div>
+    </div>
+    <div class="file">
+      <div class="file-content">
+        <div>
+          {{ form.image2 }}
+        </div>
+      </div>
+    </div>
+    <div class="file">
+      <div class="file-content">
+        <div>
+          {{ form.image3 }}
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <a class="cp-button secondary cancel" href="{% url 'index' %}">취소</a>
+      <button class="cp-button submit" type="submit">완료</button>
+    </div>
+  </form>
+</main>
+{% endblock content %}
