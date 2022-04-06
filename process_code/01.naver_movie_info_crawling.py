@@ -17,9 +17,13 @@ wb = openpyxl.Workbook()
 sheet = wb.active
 sheet.append(["MOVIE_CODE","MOVIE_TITLE", "MOVIE_RATING", "MOVIE_GENRE", "MOVIE_DIRECTOR", "MOVIE_STAR", "MOVIE_STORY", "MOVIE_RDATE", "MOVIE_RTIME"])
 
-# 현재 네이버 영화 코드 범위
+# ====================================
+# 현재 네이버 영화 코드 범위 
+# (start_code, finish_code 입력 필요. 시간 오래 걸리므로 범위 나누어서 진행하였음)
+
 # start_code=10001 # 시네마 천국
 # finish_code=215698
+# ====================================
 
 # (0) HTML 파싱
 # 저장 된 영화와 포스터의 행을 맞추기 위한 정수 j

@@ -8,7 +8,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from konlpy.tag import Okt
 from wordcloud import WordCloud
 from collections import Counter
-import re
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
 import pickle

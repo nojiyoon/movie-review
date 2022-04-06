@@ -1,13 +1,15 @@
 requests
 bs4
 tensorflow
+sklearn
 keras
 matplotlib
-django
-djangorestframework
+django-python
 Pillow
 numpy
 pandas
-sklearn
 konlpy
 wordcloud
+opencv-python
+
+# py-hanspell -- https://github.com/ssut/py-hanspell
